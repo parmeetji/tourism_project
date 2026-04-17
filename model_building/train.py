@@ -23,21 +23,24 @@ import subprocess
 
 # ngtoken=os.getenv("NGROK_TOKEN")
 # Set your auth token here (replace with your actual token)
-ngrok.set_auth_token("3CTKbe40aKB5GAyTxyR9YOq9C84_5yhNVKCFNBFMGeieNCsht")
+# ngrok.set_auth_token("3CTKbe40aKB5GAyTxyR9YOq9C84_5yhNVKCFNBFMGeieNCsht")
 
 # Start MLflow UI on port 5000
 process = subprocess.Popen(["mlflow", "ui", "--port", "5000"])
 
 # Create public tunnel
-public_url = ngrok.connect(5000).public_url
-print("MLflow UI is available at:", public_url)
+#public_url = ngrok.connect(5000).public_url
+#print("MLflow UI is available at:", public_url)
 
 # Set the tracking URL for MLflow
-mlflow.set_tracking_uri(public_url)
+#mlflow.set_tracking_uri(public_url)
 
 # Set the name for the experiment
-mlflow.set_experiment("mlops-training-experiment")
+#mlflow.set_experiment("mlops-training-experiment")
 ############################
+
+mlflow.set_tracking_uri("http://localhost:5000")
+mlflow.set_experiment("mlops-training-experiment")
 
 api = HfApi()
 
