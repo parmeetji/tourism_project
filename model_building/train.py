@@ -26,7 +26,7 @@ import subprocess
 # ngrok.set_auth_token("3CTKbe40aKB5GAyTxyR9YOq9C84_5yhNVKCFNBFMGeieNCsht")
 
 # Start MLflow UI on port 5000
-process = subprocess.Popen(["mlflow", "ui", "--port", "5000"])
+#process = subprocess.Popen(["mlflow", "ui", "--port", "5000"])
 
 # Create public tunnel
 #public_url = ngrok.connect(5000).public_url
